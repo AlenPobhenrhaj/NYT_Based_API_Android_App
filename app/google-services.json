@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "656412855461",
+    "project_id": "nyt-based-api-android-app",
+    "storage_bucket": "nyt-based-api-android-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656412855461:android:b0aa83abb3fd459dd2114c",
+        "android_client_info": {
+          "package_name": "com.example.nytbasedapiandroidapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "656412855461-18urngpoflif3kn7fesbb3h0ul9sl2qa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAkl8yh20UEHq5tsCJ_KvFXIn1o-JGNAes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "656412855461-18urngpoflif3kn7fesbb3h0ul9sl2qa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
