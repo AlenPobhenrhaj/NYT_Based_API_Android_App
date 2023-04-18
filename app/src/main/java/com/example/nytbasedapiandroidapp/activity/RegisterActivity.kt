@@ -9,7 +9,7 @@ import com.example.nytbasedapiandroidapp.firebase.FirebaseAuthHelper
 class RegisterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityRegisterBinding
-    private val authHelper = FirebaseAuthHelper()
+    private val authHelper = FirebaseAuthHelper(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
