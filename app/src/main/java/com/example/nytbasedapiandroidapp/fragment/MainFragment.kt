@@ -7,42 +7,49 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.nytbasedapiandroidapp.activity.LoginActivity
+import com.example.nytbasedapiandroidapp.adapter.TopStoriesAdapter
 import com.example.nytbasedapiandroidapp.databinding.FragmentMainBinding
 import com.example.nytbasedapiandroidapp.firebase.FirebaseAuthHelper
 import com.example.nytbasedapiandroidapp.topstory.data.NYTApiService
-import com.example.nytbasedapiandroidapp.topstory.database.AppDatabase
+import com.example.nytbasedapiandroidapp.topstory.database.TopStoriesDatabase
 import com.example.nytbasedapiandroidapp.topstory.repository.TopStoriesRepository
 import com.example.nytbasedapiandroidapp.topstory.viewmodel.MainViewModel
+import com.example.nytbasedapiandroidapp.topstory.viewmodel.MainViewModelFactory
 
 // MainFragment.kt
-
-
 class MainFragment : Fragment() {
 
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
     private val authHelper by lazy { FirebaseAuthHelper(requireContext()) }
+
     private val viewModel: MainViewModel by viewModels {
-        MainViewModelFactory(TopStoriesRepository(NYTApiService.create(), AppDatabase.getInstance(requireContext()).topStoriesDao()))
+        MainViewModelFactory(TopStoriesRepository(NYTApiService.create(), TopStoriesDatabase.getDatabase(requireContext()).topStoriesDao()))
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
-
-        viewModel.topStories.observe(viewLifecycleOwner, Observer { topStories ->
-            // Update your UI with the fetched data
-        })
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val adapter = TopStoriesAdapter(listOf())
+        binding.topStoriesRecyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.topStoriesRecyclerView.adapter = adapter
+
+        viewModel.topStories.observe(viewLifecycleOwner) { topStories ->
+            if (topStories != null) {
+                adapter.updateTopStories(topStories.results)
+            }
+        }
 
         binding.logoutButton.setOnClickListener {
             authHelper.logout()
@@ -61,4 +68,5 @@ class MainFragment : Fragment() {
         _binding = null
     }
 }
+
 

@@ -15,7 +15,7 @@ data class ResultEntity(
     val item_type: String,
     val kicker: String,
     val material_type_facet: String,
-    val multimedia: List<Multimedia>,
+    val multimedia: List<MultimediaEntity>,
     val org_facet: List<String>,
     val per_facet: List<String>,
     val published_date: String,
