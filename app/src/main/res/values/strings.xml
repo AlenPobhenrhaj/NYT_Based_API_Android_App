@@ -9,4 +9,6 @@
     <string name="byline">Byline</string>
     <string name="published_date">Published Date</string>
     <string name="abstrac">Abstract</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="if_you_don_t_have_an_account_click_here_to_register">If you don\'t have an account, click here to register</string>
 </resources>

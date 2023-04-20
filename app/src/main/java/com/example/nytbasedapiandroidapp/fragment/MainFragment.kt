@@ -82,7 +82,7 @@ class MainFragment : Fragment() {
         requireActivity().finish()
     }
 
-    private fun animateRecyclerView(shouldMoveToLeft: Boolean) {
+  /*  private fun animateRecyclerView(shouldMoveToLeft: Boolean) {
         val animationDuration = 300L // You can adjust the duration as needed
         val fromX = if (shouldMoveToLeft) 0f else -binding.topStoriesRecyclerView.width.toFloat()
         val toX = if (shouldMoveToLeft) -binding.topStoriesRecyclerView.width.toFloat() else 0f
@@ -92,7 +92,7 @@ class MainFragment : Fragment() {
         }
 
         binding.topStoriesRecyclerView.startAnimation(translateAnimation)
-    }
+    }*/
 
     override fun onDestroyView() {
 
