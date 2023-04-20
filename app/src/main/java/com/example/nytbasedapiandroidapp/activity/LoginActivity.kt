@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.nytbasedapiandroidapp.databinding.ActivityLoginBinding
-import com.example.nytbasedapiandroidapp.databinding.ActivityMainBinding
 import com.example.nytbasedapiandroidapp.firebase.FirebaseAuthHelper
 
 class LoginActivity : AppCompatActivity() {

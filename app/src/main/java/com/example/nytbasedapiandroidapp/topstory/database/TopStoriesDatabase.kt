@@ -8,9 +8,7 @@ import androidx.room.TypeConverters
 import com.example.nytbasedapiandroidapp.topstory.models.Converters
 import com.example.nytbasedapiandroidapp.topstory.models.TopStoriesEntity
 
-// db/TopStoriesDatabase.kt
-
-
+//TopStoriesDatabase.kt
 @Database(entities = [TopStoriesEntity::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class) // Add this line
 abstract class TopStoriesDatabase : RoomDatabase() {

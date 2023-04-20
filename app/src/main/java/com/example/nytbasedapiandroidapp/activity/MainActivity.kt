@@ -3,7 +3,6 @@ package com.example.nytbasedapiandroidapp.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
 import androidx.fragment.app.commit
 import com.example.nytbasedapiandroidapp.R
 import com.example.nytbasedapiandroidapp.databinding.ActivityMainBinding

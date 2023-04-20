@@ -1,6 +1,6 @@
 package com.example.nytbasedapiandroidapp.topstory.repository
 
-// repository/TopStoriesRepository.kt
+//TopStoriesRepository.kt
 import com.example.nytbasedapiandroidapp.topstory.data.NYTApiService
 import com.example.nytbasedapiandroidapp.topstory.database.TopStoriesDao
 import com.example.nytbasedapiandroidapp.topstory.mapper.TopStoriesMapper

@@ -1,6 +1,6 @@
 package com.example.nytbasedapiandroidapp.topstory.database
 
-// db/TopStoriesDao.kt
+//TopStoriesDao.kt
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
