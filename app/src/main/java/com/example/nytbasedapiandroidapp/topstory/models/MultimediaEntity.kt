@@ -10,4 +10,5 @@ data class MultimediaEntity(
     val copyright: String,
     val format: String,
     val height: Int,
+    val url: String,
 )

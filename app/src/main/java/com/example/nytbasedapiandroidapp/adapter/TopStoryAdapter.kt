@@ -6,14 +6,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.nytbasedapiandroidapp.databinding.TopStoryItemBinding
 import com.example.nytbasedapiandroidapp.topstory.models.Result
 
-class TopStoriesAdapter(private var topStories: List<Result>) : RecyclerView.Adapter<TopStoriesAdapter.TopStoryViewHolder>() {
+class TopStoriesAdapter(
+    private var topStories: List<Result>,
+    private val onItemClick: (Result) -> Unit
+) : RecyclerView.Adapter<TopStoriesAdapter.TopStoryViewHolder>() {
 
-    class TopStoryViewHolder(private val binding: TopStoryItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class TopStoryViewHolder(private val binding: TopStoryItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(story: Result) {
             binding.title.text = story.title
             binding.byline.text = story.byline
             binding.publishedDate.text = story.published_date
             // You can bind other fields as needed
+
+            itemView.setOnClickListener {
+                onItemClick(story)
+            }
         }
     }
 

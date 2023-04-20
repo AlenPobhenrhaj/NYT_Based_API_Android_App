@@ -12,6 +12,7 @@ object TopStoriesMapper {
             copyright = multimedia.copyright,
             format = multimedia.format,
             height = multimedia.height,
+            url = multimedia.url,
         )
     }
 
@@ -22,6 +23,7 @@ object TopStoriesMapper {
             copyright = multimediaEntity.copyright,
             format = multimediaEntity.format,
             height = multimediaEntity.height,
+            url = multimediaEntity.url,
         )
     }
 
